@@ -1,0 +1,15 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h3 class="edit-post-text">EDITAR POST</h3>
+    <div class="box-edit-text"></div>
+
+    <form method="POST" action="{% url 'portfolio:editpost' post_id %}">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <a href="{% url 'portfolio:blog' %}" class="btn-cancel-edit" role="button">Cancelar</a>
+        <input type="submit" value="Gravar" class="btn-save-post">
+        <a href="{% url 'portfolio:deletepost' post_id %}" role="button" class="btn-delete-post">Apagar</a>
+    </form>
+{% endblock %}
