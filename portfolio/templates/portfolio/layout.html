@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +8,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>Portfolio Tomás Fonseca</title>
 </head>
 <body>
     <header>
@@ -16,7 +17,7 @@
             <a href="{% url 'portfolio:home' %}">Home</a>
             <a href="{% url 'portfolio:licenciatura' %}">Sobre Mim</a>
             <a href="{% url 'portfolio:projetos' %}">Projetos</a>
-            <a href="">Web</a>
+            <a href="{% url 'portfolio:web' %}">Web</a>
             <a href="{% url 'portfolio:blog' %}">Blog</a>
             <a href="">Contacto</a>
         </nav>

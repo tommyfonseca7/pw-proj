@@ -4,7 +4,7 @@
     <h3 class="edit-post-text">EDITAR POST</h3>
     <div class="box-edit-text"></div>
 
-    <form method="POST" action="{% url 'portfolio:editpost' post_id %}">
+    <form method="POST" action="{% url 'portfolio:editpost' post_id %}" class="form-edit-post">
         {% csrf_token %}
         
         {{ form.as_p }}
