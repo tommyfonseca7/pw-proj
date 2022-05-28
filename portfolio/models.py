@@ -49,14 +49,14 @@ class Projeto(models.Model):
     
 
 class Cadeira(models.Model):
-   nome = models.CharField(max_length=20)
+   nome = models.CharField(max_length=50)
    ano = models.IntegerField()
    semestre = models.IntegerField(default=1, validators=[MaxValueValidator(2), MinValueValidator(1)])
    etcs = models.IntegerField(default='6')
    descricao = models.TextField()
    rank = models.IntegerField(default=1, validators=[MaxValueValidator(5), MinValueValidator(1)])
    ano_letivo = models.CharField(max_length=10, default='2020')
-   linguagens = models.ManyToManyField(Linguagem)
+   linguagens = models.ManyToManyField(Linguagem, on_delete=models.CASCADE)
    docente_teorica = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
    docentes_praticas = models.ManyToManyField(Pessoa, related_name='caderias')
    projetos = models.ManyToManyField(Projeto)
