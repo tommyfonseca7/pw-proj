@@ -49,7 +49,7 @@ class Projeto(models.Model):
     
 
 class Cadeira(models.Model):
-   nome = models.CharField(max_length=50)
+   nome = models.CharField(max_length=70)
    ano = models.IntegerField()
    semestre = models.IntegerField(default=1, validators=[MaxValueValidator(2), MinValueValidator(1)])
    etcs = models.IntegerField(default='6')
