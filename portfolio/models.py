@@ -59,6 +59,8 @@ class Cadeira(models.Model):
    docente_teorica = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
    projetos = models.ManyToManyField(Projeto, blank=True)
    link = models.URLField(blank=True)
+   def __str__(self):
+       return self.nome
 
 
 
