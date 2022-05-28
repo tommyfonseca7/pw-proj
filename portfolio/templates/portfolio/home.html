@@ -1,8 +1,47 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h3>Titulo</h3>
-    <p>texto texto texto texto texto texto texto </p>
-    {% load static %}
-    <img src="{% static 'portfolio/images/image.png' %}">
+    <div class="img-home">
+        <h1>Tomás Fonseca</h1>
+        <p>Portfolio . . .</p>
+    </div>
+
+    <div class="separator-home-one">
+        <h2>Não deixes para amanhã o que podes fazer hoje</h2>
+    </div>
+
+    <div class="middle-section-home">
+        <h2>Mais sobre mim?</h2>
+        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+    </div>
+
+    <div class="home-info">
+        {% load static %}
+        <img src="{% static 'portfolio/images/tomas1.png' %}">
+        <div>
+            <h1>Quem sou?</h1>
+            <p>Tomás Ferreira Fonseca, 19 anos</p>
+        </div>
+
+        <div>
+            <h1>Universidade Lusófona de Humanidades e Tecnologias</h1>
+            <p>Licenciatura em Engenharia Informática, 2º Ano</p>
+        </div>
+
+        <div>
+            <h1>Hobbies</h1>
+            <p>Taekwondo, Ouvir musica, Jogos</p>
+        </div>
+
+        {% load static %}
+        <img src="{% static 'portfolio/images/tkd1.png' %}" class="img-tkd-one">
+
+    </div>
+
+
+    <div class="space-home-two">
+        
+    </div>
+    
+    
 {% endblock %}

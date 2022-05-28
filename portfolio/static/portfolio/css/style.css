@@ -8,7 +8,9 @@
     box-sizing:border-box;
     font-family: 'Ubuntu', sans-serif;
 }
-  
+
+
+  /* LAYOUT */
 header {
     height: 10vh; 
     background: #0D5C63;
@@ -47,7 +49,6 @@ nav a:hover{
 main {
     height: 85vh;
     background-color:#FFFFFA;
-    padding: 4em 4em;
 }
   
 footer {
@@ -58,6 +59,114 @@ footer {
     align-items: center;
 }
 
+/* HOME */
+
+.img-home{
+    background: url("../images/image.png");
+    height: 90vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-size: cover;
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-home h1{
+    color: #0D5C63;
+    font-size: 75px;
+    margin-right: 100px;
+}
+
+.img-home p{
+    color: grey;
+    font-size: 50px;
+    margin-right: 100px;
+    
+}
+
+.separator-home-one{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.separator-home-one h2{
+    color: #0D5C63;
+    font-size: 75px;
+    margin-right: 40px;
+    
+}
+
+.middle-section-home{
+    background: url('../images/lisbon.png');
+    min-height: 80vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.middle-section-home h2{
+    color: white;
+    font-size: 50px;
+}
+
+.middle-section-home i{
+    color: white;
+    font-size: 50px;
+}
+
+.home-info{
+    margin-top: 30px;
+    margin-left: 30px;
+    display: flex;
+
+}
+
+.home-info img{
+    border-radius: 20px;
+}
+
+.home-info div{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.home-info div h1{
+    padding: 40px;
+    color: #0D5C63;
+    text-align: center;
+    font-size: 30px;
+}
+
+.home-info div p{
+    padding: 40px;
+    color: grey;
+    text-align: center;
+    font-size: 20px;
+}
+
+.img-tkd-one{
+    width: 300px;
+    height: 449px;
+    position: relative;
+    top: 450px;
+    right: 500px
+}
+
+.space-home-two{
+    height: 10vh;
+}
+
+/* About me */
 .title1{
     font-size: 50px;
     display: flex;
@@ -248,6 +357,8 @@ footer {
     color: white;
     border-radius: 20px;
 }
+
+
 
 /* BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS  */
 .container_blog{
@@ -532,6 +643,14 @@ footer {
     left: 63px;
 } 
 
+.text-education-one img{
+    height: 122px;
+    width: 100px;
+    position: relative;
+    left: 1500px;
+    bottom: 350px;
+}
+
 
 .side-bar{
     width: 3px;
@@ -605,6 +724,12 @@ footer {
     top: -250px;
     left: 63px;
     
+}
+
+.text-certificados-one img{
+    position: relative;
+    left: 1500px;
+    bottom: 300px;
 }
 
 .title-aptidoes{

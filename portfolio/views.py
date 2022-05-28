@@ -1,23 +1,35 @@
 from multiprocessing import context
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Cadeira, Pessoa, Projeto
 from .forms import PostForm
 from .models import PontuacaoQuizz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+import matplotlib
+from matplotlib import pyplot as plt
 
 
 def home_page_view(request):
 	return render(request, 'portfolio/home.html')
 
 def licenciatura_page_view(request):
-	return render(request, 'portfolio/licenciatura.html')
+	context = { 'cadeiras' : Cadeira.objects.all(),
+				'pessoas' : Pessoa.objects.all(),
+				'projetos' : Projeto.objects.all()
+				}
+	return render(request, 'portfolio/licenciatura.html', context)
 
 def projetos_page_view(request):
-	return render(request, 'portfolio/projetos.html')
+	context = { 'pessoas' : Pessoa.objects.all(),
+				'projetos' : Projeto.objects.all()
+				}
+	return render(request, 'portfolio/projetos.html', context)
 
 def web_page_view(request):
 	return render(request, 'portfolio/web.html')		
+
+def contact_page_view(request):
+	return render(request, 'portfolio/contact.html')
 
 def blog_page_view(request):
 	context = {'posts': Post.objects.all()}
@@ -64,20 +76,25 @@ def pontuacao_quizz(request):
 		return p
 	
 
-
-def quizz(request):
-   if request.method == 'POST':
-      n = request.POST['name']
-      p = pontuacao_quizz(request)
-      r = PontuacaoQuizz(nome=n, pontuacao=p)
-      r.save()
-
 def desenha_grafico_resultados():
-	persons = PontuacaoQuizz.objects.all()
-	persons.sorted(persons.points)
+	persons = sorted(PontuacaoQuizz.objects.all(), key=lambda t: t.points, reverse=True)	
+	nomes = []
+	points = []
 	for person in persons:
-		names = names.append(person.name)
-		points = points.append(person.points)	
+		nomes.append(person.nome)
+		points.append(person.points)
+	plt.barh(nomes, points)
+	plt.savefig('portfolio/static/portfolio/images/grafico.png', bbox_inches = 'thight')
+	
+def quizz(request):
+		if request.method == 'POST':
+			n = request.POST['nome']
+			a = request.POST['apelido']
+			p = pontuacao_quizz(request)
+			r = PontuacaoQuizz(nome=n, apelido=a, pontuacao=p)
+			r.save()
+		desenha_grafico_resultados()
+		return render(request,'portfolio/web.html')		
 	
 
 
