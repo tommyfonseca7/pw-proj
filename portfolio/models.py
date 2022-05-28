@@ -1,6 +1,5 @@
 from __future__ import annotations
 from distutils.command.upload import upload
-from msilib.schema import Class
 from os import link
 from turtle import Turtle
 from unicodedata import name
