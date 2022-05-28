@@ -1,8 +1,4 @@
-from __future__ import annotations
 from distutils.command.upload import upload
-from os import link
-from turtle import Turtle
-from unicodedata import name
 from django.db import models
 from django import forms
 from django.core.validators import MaxValueValidator, MinValueValidator
