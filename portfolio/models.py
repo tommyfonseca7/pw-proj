@@ -57,8 +57,7 @@ class Cadeira(models.Model):
    rank = models.IntegerField(default=1, validators=[MaxValueValidator(5), MinValueValidator(1)])
    ano_letivo = models.CharField(max_length=10, default='2020')
    docente_teorica = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
-   docentes_praticas = models.ManyToManyField(Pessoa, related_name='caderias')
-   projetos = models.ManyToManyField(Projeto)
+   projetos = models.ManyToManyField(Projeto, blank=True)
    link = models.URLField(blank=True)
 
 
