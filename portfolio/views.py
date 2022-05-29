@@ -1,6 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render
-from .models import Post, Cadeira, Pessoa, Projeto
+from .models import Post, Cadeira, Pessoa, Projeto, Interesse, Escola, Certificado, Competencia
 from .forms import PostForm
 from .models import PontuacaoQuizz
 from django.http import HttpResponseRedirect
@@ -8,14 +8,21 @@ from django.urls import reverse
 import matplotlib
 from matplotlib import pyplot as plt
 
+def resolution_path(instance, filename):
+    return f'users/{instance.id}/'
 
+	
 def home_page_view(request):
 	return render(request, 'portfolio/home.html')
 
 def licenciatura_page_view(request):
 	context = { 'cadeiras' : Cadeira.objects.all(),
 				'pessoas' : Pessoa.objects.all(),
-				'projetos' : Projeto.objects.all()
+				'projetos' : Projeto.objects.all(),
+				'interesses' : Interesse.objects.all(),
+				'escolas' : Escola.objects.all(),
+				'certificados' : Certificado.objects.all(),
+				'competencias' : Competencia.objects.all(),
 				}
 	return render(request, 'portfolio/licenciatura.html', context)
 
@@ -25,7 +32,7 @@ def projetos_page_view(request):
 				}
 	return render(request, 'portfolio/projetos.html', context)
 
-def web_page_view(request):
+def web_page_view(request): 
 	return render(request, 'portfolio/web.html')		
 
 def contact_page_view(request):

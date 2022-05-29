@@ -2,12 +2,10 @@
 
 {% block main %}
     <div class="title1">
-        <div class="box1"></div>
         <h1>Licenciatura</h1>
-        <div class="box2"></div>
     </div>
 	
-    <div class="container1">
+    <div class="container-cadeira">
         {% for cadeira in cadeiras %}
         <div>
             <h2 class="cadeira">{{cadeira.nome}}</h2>
@@ -30,52 +28,58 @@
     <div class="title-education">
         <h1>Educação</h1>
     </div>
-
-
-    
-    <div class="text-education-one"> 
-        <div class="side-bar"></div>
-        <div class="circle-one"></div>
-        <h1 class="text-t1">Escola Secundaria Manuel Cargaleiro</h1>
-        <p>Ensino secundario - Nota Final : 13.3</p>
-        {% load static %}
-        <img src="{% static 'portfolio/images/esmc.png' %}">
+    <div class="side-bar-education"></div>
+    <div class="container-education">
+        <div>
+            {% for escola in escolas %}
+            <div class="circle-education"></div>
+            <h1>{{escola.nome}}</h1>
+            <p>{{escola.descricao}}</p>
+            <p>{{escola.ano_inicio}} até {{escola.ano_fim}}</p>
+            <img src="{{escola.imagem.url}}"   class="rounded mx-auto d-block">
+            {% endfor %}
+        </div>
     </div>
+    
     
 
     <div class="title-certificados">
         <h1>Certificados</h1>
     </div>
 
-    <div class="text-certificados-one">
-        <div class="box-certificados"></div>
-        <div class="circle-certificados"></div>
-        <h1>Treinador de Desporto de Taekwondo - Grau I</h1>
-        <p>Federacao Portuguesa de Taekwondo - Nota Final: 18</p>
-        <a href="{% static 'portfolio/images/diploma-treinador.pdf'%}" download class="btn-download-dp">Download</a>
-        {% load static %}
-        <img src="{% static 'portfolio/images/fpt.png' %}">
+    <div class="side-bar-certificados"></div>
+    <div class="container-certificados">
+        <div>
+            {% for certificado in certificados %}
+            <div class="circle-certificados"></div>
+            <h1>{{certificado.titulo}}</h1>
+            <p>{{certificado.descricao}}</p>
+            <p>{{certifica.ano}}</p>
+            <a href="{{certificado.link}}" download>Download</a>
+            {% endfor %}
+        </div>
     </div>
+    
 
-    
-    
     <div class="title-aptidoes">
         <h1>Aptidões e competências pessoais</h1>
+        <h2>Aptidoes Linguisticas</h2>
     </div>
 
-    <div class="container-aptidoes-one">
+    <div class="container-aptidoes-linguisticas">
+        
+        {% for c in competencias %}
         <div>
-            <h1>Portugues - Nivel C1 🇵🇹</h1>
-            <p>Lingua nativa</p>
+            
+            {% if c.tipo == '1' %}
+                <h1>{{c.titulo}}</h1>
+                <p>{{c.descricao}}</p>
+            {% endif %}
         </div>
-
-        <div>
-            <h1>Ingles - Nivel C2 🇬🇧</h1>
-            <p>Lingua alternativa</p>
-        </div>
+        {% endfor %}
     </div>
 
-    <div class="container-aptidoes-two">
+    <!-- <div class="container-aptidoes-two">
         <div>
             <h1>Treinador de Taekwondo 🥋</h1>
             <p>Há cerca de 2 anos que tenho o cargo de treinador de taekwondo. Atualmente, dou aulas a uma turma de cerca de 10 criancas dos 4 aos 11 anos. Todo o processo de agilizacao dos educandos e encarregados de educacao fica em minha resposabilidade, bem como a seguraca e a eficiente aprendizagem dos meus alunos.</p>
@@ -95,17 +99,12 @@
 
 
     <div class="container-hobbies">
+        {% for interesse in interesses %}
         <div>
-            <h1>Taekwondo 🥋</h1>
-            <p>Pratico taekwondo há cerca de 14 anos. Faz parte de mim, de quem eu sou e de quem me tornei. Começou tudo como uma brincadeira, e uma forma de acalmar a minha personalidade "elétrica" em crianca, mas acabou por se tornar uma maneira de viver.</p>
-            <p>Hoje, para além de ser treinador como referido anteriormente, sou também atleta, Campeao Nacional Universitário, tendo pertencido à seleçao nacional na vertente de Poomsae, representado o pais internacionalmente.</p>
+            <h1>{{interesse.titulo}}</h1>
+            <p>{{interesse.descricao}}</p>
+            <img src="{{interesse.imagem.url}}"   class="rounded mx-auto d-block">
         </div>
-
-        <div>
-            <h1>Computadores 🖥️</h1>
-            <p>Comecou tudo no final do meu 4º ano de escolaridade. Tinha acabado de receber um portaitl, que me abriu as portas para o mundo dos jogos no computador e tudo o que vinha com ele. Mais tarde, quando tinha os meus 14 anos, montei o meu primeiro computador "gaming", tendo aprendido tudo atraves de videos no youtube.</p>
-            <p>Hoje posso dizer que trabalho para que essa paixao se torne o meu ganha pao. Ainda hoje essa chama esta acessa, e o gosto por programar so tem vindo a crescer nos ultimos 2 anos.</p>
-        </div>
-        
-    </div>
+        {% endfor %}   
+    </div> -->
 {% endblock %}

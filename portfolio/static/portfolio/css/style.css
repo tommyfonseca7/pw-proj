@@ -167,26 +167,27 @@ footer {
 }
 
 /* About me */
-.title1{
+.title1 h1{
     font-size: 50px;
     display: flex;
     justify-content: center;
     color: #0D5C63;
     z-index: 10;
+    padding: 50px;
 }
 
 
 
-.container1{
+.container-cadeira{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-.container1 div{
+.container-cadeira div{
     position: relative;
     width: 300px;
-    height: 500px;
+    height: 550px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
@@ -198,7 +199,7 @@ footer {
 
 .linked_prof{
     position:absolute;
-    top: 90px;
+    top: 120px;
     right: 45px;
     border: none;
     background: none;
@@ -209,7 +210,7 @@ footer {
 
 .lusofona_prof{
     position:absolute;
-    top: 90px;
+    top: 120px;
     left: 0px;
     border: none;
     background: none;
@@ -217,13 +218,7 @@ footer {
     height: 50px;
 }
 
-.container1 div h4{
-    position: absolute;
-    top: 120px;
-    left: 10px;
-}
-
-.container1 div p{
+.container-cadeira div p{
     position: absolute;
     top: 180px;
 }
@@ -243,11 +238,226 @@ footer {
 
 }
 
-.container1 div h4{
+.container-cadeira div div h4{
     position: absolute;
     top: 150px;
     left: 45px;
 }
+
+.title-education h1{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    color: #0D5C63;
+    padding: 100px;  
+}
+
+.container-education div{
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+.container-education div h1{
+    color: #0D5C63;
+}
+
+.container-education p{
+    color: grey;
+}
+
+.container-education a{
+    color: grey;
+}
+
+.side-bar-education{
+    background-color: #0D5C63;
+    width: 3px;
+    height: 700px;
+    position: absolute;
+    left: 100px;
+}
+
+.circle-education{
+    background-color: #0D5C63;
+    border-radius: 20px;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    right: 206px;
+    top: 20px;
+}
+
+
+.side-bar-certificados{
+    background-color: #0D5C63;
+    width: 3px;
+    height: 650px;
+    position: absolute;
+    left: 100px;
+}
+
+
+.container-certificados div{
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.container-certificados div h1{
+    color: #0D5C63;
+}
+
+.circle-certificados{
+    background-color: #0D5C63;
+    border-radius: 20px;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    right: 206px;
+    top: 20px;
+}
+
+
+.title-certificados h1{
+    position: relative;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    color: #0D5C63;
+    padding: 100px;
+}
+
+.box-certificados{
+    width: 3px;
+    height: 450px;
+    background-color: #0D5C63;
+    position: relative;
+    left: 50px;
+}
+
+
+.title-aptidoes h1{
+    position: relative;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    color: #0D5C63;
+    padding: 100px;
+}
+
+.title-aptidoes h2{
+    color: #0D5C63;
+    display: flex;
+    justify-content: center;
+}
+
+.container-aptidoes-linguisticas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-aptidoes-linguisticas div{
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px grey;
+    border: 3px solid #0D5C63;
+    width: 350px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.container-aptidoes-linguisticas h1{
+    color: #0D5C63;
+}
+
+.container-aptidoes-linguisticas p{
+    color: grey;
+}
+
+
+
+
+
+/* .container-aptidoes-two{
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+}
+
+.container-aptidoes-two div{
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px grey;
+    border: 3px solid #0D5C63;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.container-aptidoes-two h1{
+    margin-left: 15px;
+}
+
+.container-aptidoes-two p{
+    margin: 15px;
+    font-size: 30px;
+} */
+
+.title-hobbies{
+    position: relative;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    color: #0D5C63;
+    z-index: 10;
+}
+
+.container-hobbies{
+    padding: 50px;
+    display: flex;
+}
+
+.container-hobbies div{
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px grey;
+    border: 3px solid #0D5C63;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.container-hobbies h1{
+    margin-left: 15px;
+}
+
+.container-hobbies p{
+    margin: 15px;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .container2{
@@ -610,225 +820,7 @@ footer {
     background-color: #0D5C63;
 }
 
-.title-education{
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    color: #0D5C63;
-    z-index: 10;    
-    
-}
 
-.text-education-one{
-    display: flex;
-    flex-flow: column;
-    position: inherit;
-}
-
-.text-education-one h1{
-    font-family: 'Roboto';
-    font-size: 30px;
-    color: #0D5C63;
-    position:relative;
-    bottom: 265px;
-    left: 63px;
-} 
-
-.text-education-one p{
-    font-family: 'Roboto';
-    font-size: 30px;
-    color: #0D5C63;
-    position:relative;
-    bottom: 265px;
-    left: 63px;
-} 
-
-.text-education-one img{
-    height: 122px;
-    width: 100px;
-    position: relative;
-    left: 1500px;
-    bottom: 350px;
-}
-
-
-.side-bar{
-    width: 3px;
-    height: 450px;
-    background-color: #0D5C63;
-    position: relative;
-    left: 50px;
-}
-
-.circle-one{
-    width: 15px;
-    height: 15px;
-    border-radius: 20px;
-    background-color: #0D5C63;
-    position: relative;
-    left: 44px;
-    bottom: 230px;
-}
-
-.title-certificados{
-    position: relative;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    color: #0D5C63;
-    z-index: 10;
-}
-
-.box-certificados{
-    width: 3px;
-    height: 450px;
-    background-color: #0D5C63;
-    position: relative;
-    left: 50px;
-}
-
-.circle-certificados{
-    width: 15px;
-    height: 15px;
-    border-radius: 20px;
-    background-color: #0D5C63;
-    position: relative;
-    left: 44px;
-    bottom: 230px;
-}
-
-.text-certificados-one h1{
-    font-family: 'Roboto';
-    font-size: 30px;
-    color: #0D5C63;
-    position:relative;
-    bottom: 265px;
-    left: 63px;
-}
-
-
-.text-certificados-one p{
-    font-family: 'Roboto';
-    font-size: 30px;
-    color: #0D5C63;
-    position:relative;
-    bottom: 265px;
-    left: 63px;
-}
-
-.text-certificados-one a{
-    font-family: 'Roboto';
-    text-decoration: underline;
-    color: #0D5C63;
-    position: relative;
-    top: -250px;
-    left: 63px;
-    
-}
-
-.text-certificados-one img{
-    position: relative;
-    left: 1500px;
-    bottom: 300px;
-}
-
-.title-aptidoes{
-    position: relative;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    color: #0D5C63;
-    z-index: 10;
-}
-
-.container-aptidoes-one{
-    display: flex;
-    padding: 100px;
-    justify-content: center;
-}
-
-.container-aptidoes-one div{
-    margin: 50px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px grey;
-    border: 3px solid #0D5C63;
-    width: 400px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-}
-
-.container-aptidoes-one h1{
-    margin-left: 15px;
-}
-
-.container-aptidoes-one p{
-    margin-left: 15px;
-}
-
-.container-aptidoes-two{
-    display: flex;
-    padding: 50px;
-    justify-content: center;
-}
-
-.container-aptidoes-two div{
-    margin: 50px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px grey;
-    border: 3px solid #0D5C63;
-    width: 800px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-}
-
-.container-aptidoes-two h1{
-    margin-left: 15px;
-}
-
-.container-aptidoes-two p{
-    margin: 15px;
-    font-size: 30px;
-}
-
-.title-hobbies{
-    position: relative;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    color: #0D5C63;
-    z-index: 10;
-}
-
-.container-hobbies{
-    display: flex;
-    padding: 50px;
-    justify-content: center;
-}
-
-.container-hobbies div{
-    margin: 50px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px grey;
-    border: 3px solid #0D5C63;
-    width: 800px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-}
-
-.container-hobbies h1{
-    margin-left: 15px;
-}
-
-.container-hobbies p{
-    margin: 15px;
-    font-size: 30px;
-}
 
 /* WEB WEB WEB WEB WEB */
 

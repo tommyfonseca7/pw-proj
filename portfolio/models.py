@@ -62,5 +62,41 @@ class Cadeira(models.Model):
    def __str__(self):
        return self.nome
 
+class Interesse(models.Model):
+    titulo = models.CharField(max_length=20)
+    descricao = models.CharField(max_length=500)
+    imagem = models.ImageField(upload_to='interesses/')
+    
+    def __str__ (self):
+        return self.titulo
+
+class Escola(models.Model):
+    nome = models.CharField(max_length=40)
+    descricao = models.CharField(max_length=100)
+    ano_inicio = models.IntegerField(default=1)
+    ano_fim = models.IntegerField(default=1)
+    imagem = models.ImageField(upload_to='escolas/')
+
+    def __str__ (self):
+        return self.nome
+
+
+class Certificado(models.Model):
+    titulo = models.CharField(max_length=40)
+    descricao = models.CharField(max_length=100)
+    ano = models.IntegerField(default=2020)
+    link = models.FileField(default='', blank=True)
+
+    def __str__ (self):
+        return self.titulo
+
+class Competencia(models.Model):
+    titulo = models.CharField(max_length=40)
+    descricao = models.CharField(max_length=100, blank=True)
+    tipo = models.CharField(max_length=20)
+
+    def __str__ (self):
+        return self.titulo
+
 
 

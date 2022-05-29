@@ -1,9 +1,5 @@
 from django.contrib import admin
-from .models import Post
-from .models import PontuacaoQuizz
-from .models import Pessoa
-from .models import Projeto
-from .models import Cadeira
+from .models import Post, PontuacaoQuizz, Pessoa, Projeto, Cadeira, Interesse, Escola, Certificado, Competencia
 
 # Register your models here.
 
@@ -12,3 +8,7 @@ admin.site.register(PontuacaoQuizz)
 admin.site.register(Pessoa)
 admin.site.register(Projeto)
 admin.site.register(Cadeira)
+admin.site.register(Interesse)
+admin.site.register(Escola)
+admin.site.register(Certificado)
+admin.site.register(Competencia)
