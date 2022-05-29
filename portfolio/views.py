@@ -1,12 +1,13 @@
-from multiprocessing import context
 from django.shortcuts import render
 from .models import Post, Cadeira, Pessoa, Projeto, Interesse, Escola, Certificado, Competencia, Tecnologia, Noticia, Laboratorio, Site
-from .forms import PostForm
+from .forms import PostForm, ProjetoForm
 from .models import PontuacaoQuizz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import matplotlib as mpl
 from matplotlib import pyplot as plt
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 mpl.use("pgf")
 
 def resolution_path(instance, filename):
@@ -110,6 +111,55 @@ def quizz(request):
 		return render(request,'portfolio/web.html')		
 	
 
+def new_project_view(request):
+	if not request.user.is_authenticated:
+		return HttpResponseRedirect(reverse('portfolio:login'))
+
+	if request.method == 'POST':
+		form = ProjetoForm(request.POST, request.FILES)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect(reverse('potfolio:projetos'))
+		form = ProjetoForm()
+		context = {'form' : form}
+		return render(request, 'portfolio/newproj.html', context)
+
+@login_required
+def edit_project_view(request, projeto_id):
+	projeto = Projeto.objects.get(id = projeto_id)
+	if request.method == 'POST':
+		form = ProjetoForm(request.POST, request.FILES, instace = projeto)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect(reverse('potfolio:projetos'))
+	else:
+		form = ProjetoForm(instance=projeto)
+	context={'form' : form, 'projeto_id' : projeto_id}
+	return render(request, 'portfolio/editproj.html', context)
+
+def delete_project_view(request, projeto_id):
+	Projeto.objects.get(id=projeto_id).delete()
+	return HttpResponseRedirect(reverse('portfolio:projetos'))
+
+def view_login(request):
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+
+		user = authenticate(request, username=username, password=password)
+
+		if user is not None:
+			login(request, user)
+			return HttpResponseRedirect(reverse('portfolio:home'))
+		else:
+			return render(request, 'portfolio/login.html', {'message' : 'Credenciais Inválidos.'})
+
+	return render(request, 'portfolio/login.html')
+
+def view_logout(request):
+	logout(request)
+	return render(request, 'portfolio/login.html', {'message' : {'Logout concluido'}})
 
 
-
+def contact_page_view(request):
+	return render(request, 'portfolio/contact.html')

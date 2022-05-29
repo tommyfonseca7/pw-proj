@@ -16,6 +16,12 @@ urlpatterns = [
     path('web', views.web_page_view, name='web'),
     path('contact', views.contact_page_view, name='contact'),
     path('quizz', views.quizz, name='quizz'),
+    path('newproj', views.new_project_view, name='newproj'),
+    path('editproj/<int:projeto_id>', views.edit_project_view,name='editproj'),
+    path('deleteproj/<int:projeto_id>', views.delete_project_view,name='deleteproj'),
+    path('login', views.view_login, name='login'),
+    path('logout', views.view_logout, name='logout'),
+    path('contact', views.contact_page_view, name='contact'),
 
 
 ]

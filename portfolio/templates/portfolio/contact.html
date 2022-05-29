@@ -1,11 +1,12 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-    <h3>Contacto</h3>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        
-        <div class="tag"></div>
-    </form>
+<div class="container-contacto">
+    <h1>Contacto</h1>
+    <h3>Entre em contacto comigo<i class="fa fa-hand-pointer-o" aria-hidden="true"></i></h3>
+    {% load static%}
+    <a href="https://www.linkedin.com/in/tomas7fonseca/" class="contact-linkedin"></a>
+    <a href="mailto:tomas7fonseca@gmail.com" class="contact-email"></a>
+</div>
+    
 {% endblock %}
