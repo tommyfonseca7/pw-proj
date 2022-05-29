@@ -36,11 +36,11 @@ class Pessoa(models.Model):
             return "Aluno " + self.nome
 
 class Projeto(models.Model):
-    tiulo = models.CharField(max_length=30)
+    titulo = models.CharField(max_length=30)
     descricao = models.CharField(max_length=500, default='')
-    imagem = models.ImageField(upload_to='projetos/', default = '')
+    imagem = models.ImageField(upload_to='projetos/')
     autores = models.ManyToManyField(Pessoa)
-    ano = models.IntegerField
+    ano = models.IntegerField(default=2020)
     github = models.URLField(blank=True)
     youtube = models.URLField(blank=True)
 
@@ -99,4 +99,39 @@ class Competencia(models.Model):
         return self.titulo
 
 
+class Tecnologia(models.Model):
+    titulo = models.CharField(max_length=20)
+    nome = models.CharField(max_length=50)
+    ano_criacao = models.IntegerField(default=1)
+    criador = models.CharField(max_length=50)
+    link = models.URLField(blank=True)
+    descricao = models.CharField(max_length=500, blank=True)
+    imagem = models.ImageField(upload_to='web/')
 
+    def __str__ (self):
+        return self.titulo
+
+class Laboratorio(models.Model):
+    titulo = models.CharField(max_length=60)
+    descricao =  models.CharField(max_length=500, blank=True)
+    link = models.URLField(blank=True)
+
+    def __str__ (self):
+        return self.titulo
+
+class Noticia(models.Model):
+    titulo = models.CharField(max_length=60)
+    descricao =  models.CharField(max_length=500, blank=True) 
+    imagem = models.ImageField(upload_to='web/')
+    date = models.DateField(blank=True)
+
+    def __str__ (self):
+        return self.titulo
+
+class Site(models.Model):
+    titulo = models.CharField(max_length=60)
+    imagem = models.ImageField(upload_to='web/')
+    link = models.URLField(blank=True)
+
+    def __str__ (self):
+        return self.titulo

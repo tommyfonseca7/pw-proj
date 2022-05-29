@@ -1,117 +1,136 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<div class="container-title-web">
-        <h1>WEB</h1>
-        <div class="box"></div>
+
+<div class="container-title-web">
+    <h1>WEB</h1>
+    <div class="box"></div>
+</div>
+
+
+<div class="title-web">
+    <h1>Tecnologias</h1>
+</div>
+
+<div class="container-tecnologias">
+    {% for tecnologia in tecnologias %}
+    <div>
+        
+        <h1>{{ tecnologia.titulo  }}</h1>
+        <h2>{{ tecnologia.nome  }}</h2>
+        <h3>{{ tecnologia.ano_criacao }}</h3>
+        <h4>{{ tecnologia.criador }}</h4>
+        <a href="{{ tecnologia.link }}">Website Oficial</a>
+        <p>{{ tecnologia.descricao }}</p>
+        <img src="{{ tecnologia.imagem.url }}" alt="">
     </div>
+    {% endfor %}
+</div>
 
-    <h1 class="title-web-one">Tecnologias Existentes</h1>
-    <h2 class="title-web-two">Front-End</h2>
-    <div class="container-web-one">
-        <div>
-            <h1>HTML</h1>
-            <p>HyperText Markup Language (HTML)</p>
-            <p>Deriva do Standard Generalized Markup Language (SGML), tal como o XML.</p>
-            <p>Linguagem de marcadores (markup), não é uma linguagem de programação.</p>
-            <p>Os ficheiros HTML têm extensão html ou htm</p>
-            {% load static %}
-            <img src="{% static 'portfolio/images/html.png' %}" class="web-img-html">
-        </div>
+<div class="title-web">
+    <h1>Noticias</h1>
+</div>
 
-        <div>
-            <h1>CSS</h1>
-            <p>Cascading style sheet (CSS) é um conjunto de regras que determinam como o browser deve apresentar o conteúdo.</p>
-            <p>O CSS surge para separar o conteúdo da sua aparência</p>
-            <p>Através do CSS é possível separar o conteúdo do estilo</p>
-            {% load static %}
-            <img src="{% static 'portfolio/images/css.png' %}" class="web-img-html">
-        </div>
-
-        <div>
-            <h1>JavaScript</h1>
-            <p>JavaScript é uma linguagem de script que segue o padrão ECMAScript.</p>
-            <p>Todos os navegadores têm um interpretador JavaScript que deve ser compatível com o ECMAScript e obedecer aos padrões da W3C</p>
-            <p>A combinação entre JavaScript, DOM e HTML representa um conjunto poderoso de ferramentas para criação de uma interface de usuário web</p>
-            {% load static %}
-            <img src="{% static 'portfolio/images/javascript.png' %}" class="web-img-html">
-        </div>
+<div class="container-noticias">
+    {% for noticia in noticias %}
+    <div>
+        <h1>{{ noticia.titulo  }}</h1>
+        <h3>{{ noticia.date }}</h3>
+        <p>{{ noticia.descricao  }}</p>
+        <img src="{{ noticia.imagem.url }}" alt="">
     </div>
+    {% endfor %}
+</div>
 
-    <h2 class="title-web-two">Back-End</h2>
 
-    <div class="container-web-one">
-        <div>
-            <h1>Python</h1>
-            <p>Orientado a objetos</p>
-            <p>Podem-se adicionar módulos de baixo nível ao interpretador Python.</p>
-            <p>o Python pode ser executado numa grande variedade de plataformas de hardware e tem a mesma interface em todas as plataformas.</p>
-            <p>Tempo de desenvolvimento curto</p>
-            {% load static %}
-            <img src="{% static 'portfolio/images/python.png' %}" class="web-img-html">
-        </div>
+<div class="title-web">
+    <h1>Sites</h1>
+</div>
 
-        <div>
-            <h1>Django  </h1>
-            <p>Arquitetura do Django:Django Models, Django Templates e Django Views.</p>
-            <p>Django é uma web framework em Python com uma arquitetura MTV, para criar aplicações CRUD, com interface de um browser.</p>
-            <p>Ridiculamente rápido, Totalmente equipado, Tranquilamente seguro</p>
-            <p>Extremamente escalável, Incrivelmente versátil, Código aberto e Enorme comunidade</p>
-            {% load static %}
-            <img src="{% static 'portfolio/images/django.png' %}" class="web-img-html">
-        </div>
+<div class="container-sites">
+    {% for site in sites %}
+    <div>
+        <h1>{{ site.titulo  }}</h1>
+        <img src="{{ site.imagem.url }}" alt="">
+        <a href="{{ site.link }}">Site</a>
     </div>
+    {% endfor %}
+</div>
 
-    <h1 class="title-web-one">Quizz</h1>
-    <form method="POST" action="" class="form-quizz">
-        <p>Html é uma linguagem:</p> 
-        <input type="radio" name="question-one" id="answer-one" value="Front-End">
-        <label for="answer-one">Front-End</label>
-        <input type="radio" name="question-one" id="answer-two" value="Back-End">
-        <label for="answer-two">Back-End</label>
-        
+<div class="title-web">
+    <h1>Laboratórios</h1>
+</div>
 
-        <p>CSS serve para: </p>
-        <input type="radio" name="question-one" id="answer-three" value="certo">
-        <label for="answer-four">Separar o Conteudo da Aparencia</label>
-        <input type="radio" name="question-one" id="answer-four" value="errado">
-        <label for="answer-three">Separar o Conteudo do Codigo</label>
-        
+<div class="container-labs">
+    {% for lab in laboratorios %}
+    <div>
+        <h1>{{ lab.titulo  }}</h1>
+        <p>{{ lab.descricao  }}</p>
+        <a href="{{ lab.link }}">Link</a>
+    </div>
+    {% endfor %}
+</div>
 
-        <p>Quais sao as 3 melhores ferramentas para criar uma interface de usuario web:</p>
-        <input type="radio" name="question-three" id="asnwer-eleven" value="certo">
-        <label for="answer-eleven">HTML JavaScript DOM</label>
-        <input type="radio" name="question-three" id="answer-twelve" value="errado">
-        <label for="answer-twelve">HTML CSS JavaScript</label>
-        <input type="radio" name="question-three" id="answer-thirteen" value="errado">
-        <label for="answer-thirteen">HTML CSS Django</label>
-        
+<div class="title-web">
+    <h1>Quizz</h1>
+</div>
 
-        <p>Python é uma linguagem de desenvolvimento:</p>
-        <input type="radio" name="question-four" id="answer-five" value="lento">
-        <label for="answer-five">Lento</label>
-        <input type="radio" name="question-four" id="answer-six" value="medio">
-        <label for="answer-six">Medio</label>
-        <input type="radio" name="question-four" id="answer-seven" value="rapido">
-        <label for="answer-six">Rapido</label>
-        
+<form method="POST" action="quizz" id="quiz">
+    {% csrf_token %}
 
-        <p>Djando é uma web framewok baseada em:</p>
-        <input type="radio" name="question-five" id="answer-eigth" value="Java">
-        <label for="answer-eigth">Java</label>
-        <input type="radio" name="question-five" id="answer-nine" value="Python">
-        <label for="answer-nine">Python</label>
-        <input type="radio" name="question-five" id="answer-ten" value="Sql">
-        <label for="answer-ten">Sql</label>
-
-
+    <fieldset class="channel-one-quizz">
+        <legend>Dados do Utilizador</legend>
         <p>Nome:</p>
-        <input type="text" name="name" id="fname" required autocomplete="on" placeholder="insira nome" autofocus>
+        <input type="text" name="name" id="name" required autocomplete="on" placeholder="Insira o seu nome completo." width="200px">
 
-        <input type="submit" value="Submit" class="btn-submit-quizz">
-    </form>
-    {% load static %}
-    <img src="{% static 'portfolio/images/plot.png' %}" alt="">
+    </fieldset>
 
-    
-{% endblock %}  
+<fieldset class="channel-two-quizz">
+    <legend>Perguntas</legend>
+    <br>
+    <p>HTML é uma linguagem:</p>
+    <input type="radio" name="question-one" id="Front_End" value="right">
+    <label for="Front_End">Front End</label>
+    <input type="radio" name="question-one" id="Back_End" value="wrong">
+    <label for="Back_End">Back End</label>
+    <br>
+    <p>Quais sao as 3 melhores ferramentas para criar uma interface de usuario web:</p>
+    <input type="radio" name="question-two" id="wrong-one" value="wrong">
+    <label for="wrong-one">HTML CSS JavaScript</label>
+    <input type="radio" name="question-two" id="wrong-two" value="wrong">
+    <label for="wrong-two">HTML CSS Django</label>
+    <input type="radio" name="question-two" id="right-one" value="right">
+    <label for="wrong-one">HTML DOM JavaScript</label>
+    <br>
+    <p>Python é uma linguagem de desenvolvimento:</p> 
+    <input type="radio" name="question-three" id="lento" value="lento">
+    <label for="lento">Lento</label>
+    <input type="radio" name="question-three" id="medio" value="medio">
+    <label for="medio">Medio</label>
+    <input type="radio" name="question-three" id="rapido" value="rapido">
+    <label for="rapido">Rapido</label>
+    <br>
+    <p>CSS serve para:</p>
+    <input type="radio" name="question-four" id="right-two" value="right">
+    <label for="right-two">Separar o Conteudo da Aparencia</label>
+    <input type="radio" name="question-four" id="wrong-three" value="wrong">
+    <label for="wrong-three">Separar o Conteudo do Codigo</label>
+    <br>
+    <p>Django é uma web framewok baseada em:</p>
+    <input type="radio" name="question-five" id="Java" value="Java">
+    <label for="Java">Java</label>
+    <input type="radio" name="question-five" id="Python" value="Python">
+    <label for="Python">Python</label>
+    <input type="radio" name="question-five" id="Sql" value="Sql">
+    <label for="Sql">Sql</label>
+    <br>
+</fieldset>
+<button type="submit" value="Submit">Submit</button>
+</form>
+
+
+
+
+
+
+{% endblock %} 

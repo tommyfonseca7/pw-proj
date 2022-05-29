@@ -1,9 +1,83 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
-	<h1>Projetos</h1>
+	<div class="title-projetos">
+        <h1>Projetos</h1>
+    </div>
 
-    <div class="container2">
+    <div class="container-projetos">
+        {% for projeto in projetos %}
+        <div>
+            <h1>{{projeto.titulo}}</h1>
+            <p>{{projeto.descricao}}</p>
+            <img src="{{projeto.imagem.url}}" width="300px" height="300px">
+            <h2>{{projeto.ano}}</h2>
+            <h3>Participantes</h3>
+            {% for autor in projeto.autores.all %}
+            {% if autor.link_aluno %}
+            <h4>{{autor.nome}}</h4>
+            {% load static%}
+            <p><a href="{{autor.linkedin}}"><img src="{% static 'portfolio/images/linkedin.png' %}" alt=""></a></p>
+            {% endif %}
+            {% endfor %}
+            {% if projeto.github %}
+            {% load static%}
+            <a href="{{projeto.github}}"><img src="{% static 'portfolio/images/github.png' %}" alt=""></a>
+            {% endif %}
+            {% if projeto.youtube %}
+            {% load static%}
+            <a href="{{projeto.youtube}}" class="media-proj"> Media <img src="{% static 'portfolio/images/youtube.png' %}" alt=""></a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="title-projetos">
+        <h1>Trabalhos Final de Curso</h1>
+    </div>
+
+    <div class="container-projetos">
+        {% for projeto in projetos %}
+        <div>
+            <h1>{{projeto.titulo}}</h1>
+            <p>{{projeto.descricao}}</p>
+            <img src="{{projeto.imagem.url}}" width="300px" height="300px">
+            <h2>{{projeto.ano}}</h2>
+            <h3>Participantes</h3>
+            {% for autor in projeto.autores.all %}
+            {% if autor.link_aluno %}
+            <h4>{{autor.nome}}</h4>
+            {% load static%}
+            <p><a href="{{autor.linkedin}}"><img src="{% static 'portfolio/images/linkedin.png' %}" alt=""></a></p>
+            {% endif %}
+            {% endfor %}
+            {% if projeto.github %}
+            {% load static%}
+            <a href="{{projeto.github}}"><img src="{% static 'portfolio/images/github.png' %}" alt=""></a>
+            {% endif %}
+            {% if projeto.youtube %}
+            {% load static%}
+            <a href="{{projeto.youtube}}" class="media-proj"> Media <img src="{% static 'portfolio/images/youtube.png' %}" alt=""></a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container2">
         <div>
             <h2>titulo</h2>
             <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque est maiores ducimus corporis libero labore rem ut delectus, amet tempore quasi enim temporibus, fuga facere.</p>
@@ -45,5 +119,5 @@
             <button class="github_proj">github proj</button>
             <button class="youtube_proj">youtube proj</button>
         </div>
-    </div>
+    </div> -->
 {% endblock %}

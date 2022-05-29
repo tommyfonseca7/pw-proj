@@ -1,12 +1,13 @@
 from multiprocessing import context
 from django.shortcuts import render
-from .models import Post, Cadeira, Pessoa, Projeto, Interesse, Escola, Certificado, Competencia
+from .models import Post, Cadeira, Pessoa, Projeto, Interesse, Escola, Certificado, Competencia, Tecnologia, Noticia, Laboratorio, Site
 from .forms import PostForm
 from .models import PontuacaoQuizz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-import matplotlib
+import matplotlib as mpl
 from matplotlib import pyplot as plt
+mpl.use("pgf")
 
 def resolution_path(instance, filename):
     return f'users/{instance.id}/'
@@ -33,7 +34,13 @@ def projetos_page_view(request):
 	return render(request, 'portfolio/projetos.html', context)
 
 def web_page_view(request): 
-	return render(request, 'portfolio/web.html')		
+	context={
+		'tecnologias' : Tecnologia.objects.all(),
+		'noticias' : Noticia.objects.all(),
+		'sites' : Site.objects.all(),
+		'laboratorios' : Laboratorio.objects.all()
+	}
+	return render(request, 'portfolio/web.html', context)		
 
 def contact_page_view(request):
 	return render(request, 'portfolio/contact.html')
@@ -70,16 +77,16 @@ def deletepost_view_page(request,post_id):
 def pontuacao_quizz(request):
 	p = 0
 	if request.method == 'POST':
-		if request.POST['question-one'] == 'Front-End':
-			p+=1
-		if request.POST['question-two'] == 'certo':
-			p+=1
-		if request.POST['question-three'] == 'certo':
-			p+=1
-		if request.POST['question-four'] == 'rapido':
-			p+=1
+		if request.POST['question-one'] == 'right':
+			p+=20
+		if request.POST['question-two'] == 'right':
+			p+=20
+		if request.POST['question-three'] == 'rapido':
+			p+=20
+		if request.POST['question-four'] == 'right':
+			p+=20
 		if request.POST['question-five'] == 'Python':
-			p+=1
+			p+=20
 		return p
 	
 
@@ -88,17 +95,16 @@ def desenha_grafico_resultados():
 	nomes = []
 	points = []
 	for person in persons:
-		nomes.append(person.nome)
+		nomes.append(person.name)
 		points.append(person.points)
 	plt.barh(nomes, points)
-	plt.savefig('portfolio/static/portfolio/images/grafico.png', bbox_inches = 'thight')
+	plt.savefig('portfolio/static/portfolio/images/grafico.png', bbox_inches = 'tight')
 	
 def quizz(request):
 		if request.method == 'POST':
-			n = request.POST['nome']
-			a = request.POST['apelido']
+			n = request.POST['name']
 			p = pontuacao_quizz(request)
-			r = PontuacaoQuizz(nome=n, apelido=a, pontuacao=p)
+			r = PontuacaoQuizz(name=n, points=p)
 			r.save()
 		desenha_grafico_resultados()
 		return render(request,'portfolio/web.html')		

@@ -350,13 +350,13 @@ footer {
     justify-content: center;
 }
 
-.container-aptidoes-linguisticas{
+.container-aptidoes{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container-aptidoes-linguisticas div{
+.container-aptidoes div{
     margin: 50px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
@@ -368,44 +368,15 @@ footer {
     flex-flow: column;
 }
 
-.container-aptidoes-linguisticas h1{
+.container-aptidoes h1{
     color: #0D5C63;
+    padding: 10px;
 }
 
-.container-aptidoes-linguisticas p{
+.container-aptidoes p{
     color: grey;
+    padding: 10px;
 }
-
-
-
-
-
-/* .container-aptidoes-two{
-    display: flex;
-    padding: 50px;
-    justify-content: center;
-}
-
-.container-aptidoes-two div{
-    margin: 50px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px grey;
-    border: 3px solid #0D5C63;
-    width: 800px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-}
-
-.container-aptidoes-two h1{
-    margin-left: 15px;
-}
-
-.container-aptidoes-two p{
-    margin: 15px;
-    font-size: 30px;
-} */
 
 .title-hobbies{
     position: relative;
@@ -443,132 +414,60 @@ footer {
     font-size: 30px;
 }
 
+/* PORJETOS */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.container2{
+.title-projetos h1{
+    position: relative;
+    font-size: 50px;
     display: flex;
-    flex-flow: row wrap;
     justify-content: center;
+    color: #0D5C63;
+    z-index: 10;
+    padding: 20px;
 }
 
-.container2 div{
-    float: left;
-    width: 500px;
-    height: 600px;
-    padding: 40px;
-    margin: 10px;
+.container-projetos{
+    padding: 50px;
+    display: flex;
+}
+
+.container-projetos div{
+    margin: 50px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
-}
-
-.container2 h2{
-    position: relative;
-    top: -5%;
-}
-
-.desc{
-    position: relative;
-    top: -4%;
-}
-
-.container2 img{
-    position: relative;
-    left: 25%;
-    width: 200px;
-    height: 200px;
-}
-
-.container2 h5{
+    border: 3px solid #0D5C63;
+    width: 600px;
+    height: 800px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-flow: column;
 }
 
-.container2 h3{
-    position: relative;
-    top: 10px;
+.container-projetos h3,h4,p,img{
+    padding: 20px;
 }
 
-.container2 h4{
-    position: relative;
-    top: 10px;
+.container-projetos h1{
+    color: #0D5C63;
+    padding: 20px;
 }
 
-.pessoa1{
-    position: relative;
-    top: 10px;
+.container-projetos p{
+    color: grey;
+    padding: 10px;
 }
 
-.linkendin_pessoa1{
-    position: relative;
-    top: -10px;
-    left: 80px;
-    width: 250px;
-    height: 50px;
-    border: 2px solid #78CDD7;
-    background-color: #FFFFFA;
-    border-radius: 20px;
-
+.media-proj{
+    padding: 20px;
+    margin-left: 490px;
+    margin-top: 30px;
+    text-decoration: none;
+    color: grey;
 }
 
-.linkendin_pessoa1:hover{
-    background-color: #78CDD7;
-    border: 2px solid #0D5C63;
-    color: white;
-    border-radius: 20px;
-}
-
-.github_proj{
-    position: relative;
-    top: 80px;
-    left: -250px;
-    height: 100px;
-    width: 100px;
-    border: 2px solid #78CDD7;
-    background-color: #FFFFFA;
-    border-radius: 20px;
-}
-
-.github_proj:hover{
-    background-color: #78CDD7;
-    border: 2px solid #0D5C63;
-    color: white;
-    border-radius: 20px;
-}
-
-.youtube_proj{
-    position: relative;
-    top: -20px;
-    left: 300px;
-    height: 100px;
-    width: 100px;
-    border: 2px solid #78CDD7;
-    background-color: #FFFFFA;
-    border-radius: 20px;
-}
-
-.youtube_proj:hover{
-    background-color: #78CDD7;
-    border: 2px solid #0D5C63;
-    color: white;
-    border-radius: 20px;
-}
-
-
+title-tecnologias
 
 /* BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS BLOG POSTS  */
 .container_blog{
@@ -846,51 +745,142 @@ footer {
     top: -49px;
 }
 
-.title-web-one{
-    padding: 50px;
-    font-family: 'Roboto';
-    font-size: 40px;
-    color: #0D5C63;
-    font-style: bold;
-}
-
-.title-web-two{
-    margin-left: 100px;
-    font-size: 30px;
-    color: #0D5C63;
-}
-
-.container-web-one{
+.title-web{
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 50px;
+    color: #0D5C63;
 }
 
-.container-web-one div{
+.container-tecnologias{
+    display: flex;
+    padding: 30px;
+}
+
+.container-tecnologias div{
+    margin: 50px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
     border: 3px solid #0D5C63;
-    width: 500px;
+    width: 400px;
     height: 500px;
     display: flex;
-    flex-flow: column;
+    justify-content: center;
     align-items: center;
-    margin: 25px;
+    flex-flow: column;
 }
 
-.container-web-one h1{
-    padding: 15px;
+.container-tecnologias h1{
+    color: #0D5C63;
 }
 
-.container-web-one p{
-    padding: 10px;
-    font-size: 20px;
+.container-tecnologias a{
+   color: grey;
+   text-decoration: none;
 }
 
-.container-web-one img{
+.container-noticias{
+    display: flex;
+    padding: 30px;
+}
+
+.container-noticias div{
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px grey;
+    border: 3px solid #0D5C63;
+    width: 400px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.container-noticias h1{
+    color: #0D5C63;
+}
+
+.container-noticias img{
     padding: 20px;
-    
 }
+
+.container-sites{
+    display: flex;
+    padding: 30px;
+}
+
+.container-sites div{
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px grey;
+    border: 3px solid #0D5C63;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.container-sites h1{
+    color: #0D5C63;
+}
+
+.container-sites a{
+    color: grey;
+    text-decoration: none;
+ }
+
+
+.container-labs{
+    display: flex;
+    padding: 30px;
+}
+
+.container-labs div{
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px grey;
+    border: 3px solid #0D5C63;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    transition: background 0.5s;
+}
+
+.container-labs div:hover{
+    background-color: #78CDD7;  
+}
+
+.container-labs h1{
+    color: #0D5C63;
+}
+
+.container-labs a{
+    color: grey;
+    text-decoration: none;
+    font-size: 25px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .form-quizz{
     padding: 10px;

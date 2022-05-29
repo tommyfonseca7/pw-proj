@@ -65,8 +65,8 @@
         <h1>Aptidões e competências pessoais</h1>
         <h2>Aptidoes Linguisticas</h2>
     </div>
-
-    <div class="container-aptidoes-linguisticas">
+            <!-- linguisticas -->
+    <div class="container-aptidoes">
         
         {% for c in competencias %}
         <div>
@@ -79,17 +79,68 @@
         {% endfor %}
     </div>
 
-    <!-- <div class="container-aptidoes-two">
-        <div>
-            <h1>Treinador de Taekwondo 🥋</h1>
-            <p>Há cerca de 2 anos que tenho o cargo de treinador de taekwondo. Atualmente, dou aulas a uma turma de cerca de 10 criancas dos 4 aos 11 anos. Todo o processo de agilizacao dos educandos e encarregados de educacao fica em minha resposabilidade, bem como a seguraca e a eficiente aprendizagem dos meus alunos.</p>
-        </div>
+    <div class="title-aptidoes">
+        <h2>Aptidoes Técnicas</h2>
+    </div>
 
+            <!-- tecnicas -->
+    <div class="container-aptidoes">
+        {% for c in competencias %}
         <div>
-            <h1>Trabalhos de Verao 🍽️</h1>
-            <p>Todos os anos, excluindo o ano pandemico, trabalhei durante o verao na area da restauracao. Para alem de obter a minha liberdade financeira, deparei-me com problemas do mundo real, onde tinha que trabalhar em equipa para arranjar solucao para pessoas. Efetuei esta pratica no restaurante ClubHouse Aroeira, na Herdade da Aroeira, Almada.</p>
+            {% if c.tipo == '2' %}
+                <h1>{{c.titulo}}</h1>
+                <p>{{c.descricao}}</p>
+            {% endif %}
         </div>
+        {% endfor %}
+    </div>
 
+    <div class="title-aptidoes">
+        <h2>Aptidoes Informáticas</h2>
+    </div>
+
+            <!-- informaticas -->
+    <div class="container-aptidoes">  
+        {% for c in competencias %}
+        <div>
+            {% if c.tipo == '2' %}
+                <h1>{{c.titulo}}</h1>
+                <p>{{c.descricao}}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="title-aptidoes">
+        <h2>Aptidoes Organizativas</h2>
+    </div>
+
+             <!-- organizativas -->
+    <div class="container-aptidoes">  
+        {% for c in competencias %}
+        <div>
+            {% if c.tipo == '3' %}
+                <h1>{{c.titulo}}</h1>
+                <p>{{c.descricao}}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="title-aptidoes">
+        <h2>Aptidoes Sociais</h2>
+    </div>
+
+            <!-- sociais -->
+    <div class="container-aptidoes">  
+        {% for c in competencias %}
+        <div>
+            {% if c.tipo == '2' %}
+                <h1>{{c.titulo}}</h1>
+                <p>{{c.descricao}}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
     </div>
 
 
@@ -106,5 +157,5 @@
             <img src="{{interesse.imagem.url}}"   class="rounded mx-auto d-block">
         </div>
         {% endfor %}   
-    </div> -->
+    </div>
 {% endblock %}
