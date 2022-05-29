@@ -20,9 +20,6 @@ class PontuacaoQuizz(models.Model):
     name = models.CharField(max_length=50)
     points = models.IntegerField()
 
-class Linguagem(models.Model):
-    nome = models.CharField(max_length=20)
-
 class Pessoa(models.Model):
     nome = models.CharField(max_length=30)
     linkedin = models.URLField(default='')
