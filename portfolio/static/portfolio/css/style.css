@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 * {
     padding: 0px; 
@@ -874,21 +875,6 @@ footer {
  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .form-quizz{
     padding: 10px;
     display: flex;
@@ -935,6 +921,95 @@ footer {
     color: white;
     background-color: #0D5C63;
 }
+
+.weather-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('https://source.unsplash.com/1600x900/?landscape');
+    background-size: cover;
+    font-size: 150%;
+}
+
+.card{
+    background: #000000d0;
+    color: white;
+    padding: 2em;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    font-family: 'Open Sans';
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search button{
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 40px;
+    width: 50px;
+    outline: none;
+    background-color: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.search button:hover{
+    background-color: #7c7c7c6b;
+}
+
+.search input{
+     border: none;
+     outline: none;
+     padding: 0.5em 1em;
+     border-radius: 24px;
+     background-color: #7c7c7c2b;
+     color: white;
+     font-family: inherit;
+     font-size: 125%;
+     width: calc(100% - 80px);
+
+}
+
+.weather-desc{
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+
+}
+  
+.clock{
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-container{
+    font-family: Arial, Helvetica, sans-serif ;
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+    
+    
+}
+
 
 
 /* CONTACTO */

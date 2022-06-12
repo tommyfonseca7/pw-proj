@@ -40,6 +40,7 @@ class Projeto(models.Model):
     ano = models.IntegerField(default=2020)
     github = models.URLField(blank=True)
     youtube = models.URLField(blank=True)
+    final = models.IntegerField(default=1)
 
     def __str__(self):
         return self.titulo
