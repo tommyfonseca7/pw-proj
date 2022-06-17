@@ -4,11 +4,13 @@ from .forms import PostForm, ProjetoForm
 from .models import PontuacaoQuizz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-import matplotlib as mpl
 from matplotlib import pyplot as plt
+import io
+import urllib, base64
+import matplotlib
+matplotlib.use('Agg')
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-mpl.use("pgf")
 
 def resolution_path(instance, filename):
     return f'users/{instance.id}/'
@@ -33,16 +35,7 @@ def projetos_page_view(request):
 				'projetos' : Projeto.objects.all()
 				}
 	return render(request, 'portfolio/projetos.html', context)
-
-def web_page_view(request): 
-	context={
-		'tecnologias' : Tecnologia.objects.all(),
-		'noticias' : Noticia.objects.all(),
-		'sites' : Site.objects.all(),
-		'laboratorios' : Laboratorio.objects.all()
-	}
-	return render(request, 'portfolio/web.html', context)		
-
+		
 def contact_page_view(request):
 	return render(request, 'portfolio/contact.html')
 
@@ -98,8 +91,22 @@ def desenha_grafico_resultados():
 	for person in persons:
 		nomes.append(person.name)
 		points.append(person.points)
+
 	plt.barh(nomes, points)
-	plt.savefig('portfolio/static/portfolio/images/grafico.png', bbox_inches = 'tight')
+	plt.autoscale
+	fig = plt.gcf()
+	plt.close
+
+	buf = io.BytesIO()
+	fig.savefig(buf, format='png')
+
+	buf.seek(0)
+	string = base64.b64encode(buf.read())
+	uri = urllib.parse.quote(string)
+
+	return uri
+
+
 	
 def quizz(request):
 		if request.method == 'POST':
@@ -110,6 +117,15 @@ def quizz(request):
 		desenha_grafico_resultados()
 		return render(request,'portfolio/web.html')		
 	
+def web_page_view(request): 
+	context={
+		'tecnologias' : Tecnologia.objects.all(),
+		'noticias' : Noticia.objects.all(),
+		'sites' : Site.objects.all(),
+		'laboratorios' : Laboratorio.objects.all(),
+		'data':desenha_grafico_resultados()
+	}
+	return render(request, 'portfolio/web.html', context)
 
 def new_project_view(request):
 	if not request.user.is_authenticated:

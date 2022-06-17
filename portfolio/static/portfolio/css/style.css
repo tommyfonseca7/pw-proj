@@ -726,6 +726,15 @@ footer {
 
 /* WEB WEB WEB WEB WEB */
 
+.img-quizz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 75px;
+    height: 100vh;
+}
+    
+
 .container-title-web{
     display: flex;
     align-items: center;
